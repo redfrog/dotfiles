@@ -2,31 +2,7 @@ brew update
 brew upgrade
 brew tap caskroom/versions
 
-brew install ag
-brew install autoconf
-brew install automake
-brew install brotli
-brew install direnv
-brew install docker
-brew install docker-machine
-brew install ffmpeg --with-libvpx
-brew install fish
-brew install fontforge
-brew install git
-brew install go
-brew install guetzli
-brew install hugo
-brew install highlight
-brew install imagemagick --with-webp
-brew install jq
-brew install peco
-brew install rust
-brew install stoken
-brew install tmux
-brew install vim
-brew install wget
-brew install wine
-brew install zopfli
+N
 brew install zsh
 
 # brew cask install 1password

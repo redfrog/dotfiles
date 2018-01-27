@@ -15,7 +15,7 @@ antigen bundle --loc=plugins/ssh-agent/ssh-agent.plugin.zsh
 # antigen theme bhilburn/powerlevel9k powerlevel9k
 
 # Theme
-https://github.com/robbyrussell/oh-my-zsh/wiki/themes
+# https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 antigen theme agnoster
 
 antigen apply
