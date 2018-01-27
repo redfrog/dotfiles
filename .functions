@@ -1,0 +1,32 @@
+function update() {
+  # update antigen
+  pushd ~/.antigen;git pull origin master;popd;
+
+  antigen update
+  gem update
+  brew update
+  brew upgrade
+
+  # update version managers
+  pushd ~/.nodenv;git pull origin master;popd;
+  pushd ~/.nodenv/plugins/node-build;git pull origin master;popd;
+  pushd ~/.rbenv;git pull origin master;popd;
+  pushd ~/.rbenv/plugins/ruby-build;git pull origin master;popd;
+  pushd ~/.pyenv;git pull origin master;popd;
+  pushd ~/.plenv;git pull origin master;popd;
+  pushd ~/.plenv/plugins/perl-build;git pull origin master;popd;
+  clear
+}
+
+function clean() {
+  gem cleanup
+  brew cleanup -s
+  antigen cleanup
+}
+
+function compare() {
+  echo "original size (bytes): $(cat "$1" | wc -c)"
+  echo "    gzip size (bytes): $(gzip -c "$1" | wc -c)"
+  echo "  zopfli size (bytes): $(zopfli -c "$1" | wc -c)"
+  echo "  brotli size (bytes): $(bro --input "$1" | wc -c)"
+}
