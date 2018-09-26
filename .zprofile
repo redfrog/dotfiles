@@ -23,9 +23,6 @@ if [ -n "$LS_COLORS" ]; then
   zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 
-# prompt
-PROMPT="%F{red}[alpaca]%~%f %# "
-
 # lang
 export LANG=ja_JP.UTF-8
 
@@ -34,6 +31,9 @@ setopt print_eight_bit
 
 # set comment as #
 setopt interactive_comments
+
+# openssl
+export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 # nodenv
 export NODENV_ROOT="$HOME/.nodenv"
