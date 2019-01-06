@@ -58,3 +58,21 @@ eval "$(plenv init -)"
 # gopath
 export GOPATH="$HOME/.go"
 export PATH=$PATH:$GOPATH/bin
+
+# postgresql
+export PGDATA=/usr/local/var/postgres
+
+# sqlite
+export PKG_CONFIG_PATH="/usr/local/opt/sqlite/lib/pkgconfig"
+
+# python 2: pyenv
+export CLOUDSDK_PYTHON=/Users/redfrog/.pyenv/versions/2.7.14/bin/python
+
+
+# google-cloud-sdk
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/redfrog/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/redfrog/google-cloud-sdk/path.zsh.inc'; fi
+
+# google-cloud-sdk
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/redfrog/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/redfrog/google-cloud-sdk/completion.zsh.inc'; fi

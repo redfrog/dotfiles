@@ -17,5 +17,4 @@ antigen bundle --loc=plugins/ssh-agent/ssh-agent.plugin.zsh
 # Theme
 # https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 antigen theme agnoster
-
 antigen apply
