@@ -18,3 +18,11 @@ antigen bundle --loc=plugins/ssh-agent/ssh-agent.plugin.zsh
 # https://github.com/robbyrussell/oh-my-zsh/wiki/themes
 antigen theme agnoster
 antigen apply
+
+export PATH="$HOME/.run/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/redfrog/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/redfrog/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/redfrog/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/redfrog/google-cloud-sdk/completion.zsh.inc'; fi
