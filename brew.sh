@@ -25,7 +25,7 @@ brew cask install contexts
 brew cask install dash
 brew cask install datagrip
 brew cask install default-folder-x
-# brew cask install dropbox
+brew cask install dropbox
 brew cask install firefox
 brew cask install goland
 brew cask install google-chrome
@@ -38,6 +38,7 @@ brew cask install imageoptim
 brew cask install intellij-idea
 brew cask install iterm2
 brew cask install kaleidoscope
+brew cask install kawa
 brew cask install moom
 brew cask install mmhmm
 brew cask install notion
