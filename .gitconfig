@@ -40,3 +40,5 @@
   clean = git-lfs clean -- %f
 [ghq]
   root = ~/workspace
+[fetch]
+	prune = true
