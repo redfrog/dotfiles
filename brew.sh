@@ -13,11 +13,11 @@ brew install adobe-creative-cloud
 brew install alfred
 brew install appcleaner
 brew install appcode
-brew install atom
+#brew install atom
 brew install bartender
 brew install bettertouchtool
-brew install biscuit
-# brew install brackets
+#brew install biscuit
+brew install brackets
 # brew install busycal
 # brew install --cask busycontacts
 brew install cleanmymac
@@ -32,7 +32,7 @@ brew install default-folder-x
 brew install firefox
 brew install goland
 brew install google-chrome
-brew install google-drive
+#brew install google-drive
 brew install grammarly
 brew install hyperdock
 brew install imagealpha
