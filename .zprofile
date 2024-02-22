@@ -34,6 +34,8 @@ setopt interactive_comments
 
 # openssl
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+# ruby: openssl
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 # nodenv
 export NODENV_ROOT="$HOME/.nodenv"
@@ -50,29 +52,29 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# pyenv-virtualenv
+eval "$(pyenv virtualenv-init -)"
+
 # plenv
 export PLENV_ROOT="$HOME/.plenv"
 export PATH="$PLENV_ROOT/bin:$PATH"
 eval "$(plenv init -)"
 
 # gopath
-export GOPATH="$HOME/.go"
-export PATH=$PATH:$GOPATH/bin
+#export GOPATH="$HOME/.go"
+#export PATH=$PATH:$GOPATH/bin
 
 # postgresql
-export PGDATA=/usr/local/var/postgres
+#export PGDATA=/usr/local/var/postgres
 
 # sqlite
-export PKG_CONFIG_PATH="/usr/local/opt/sqlite/lib/pkgconfig"
-
-# python 2: pyenv
-export CLOUDSDK_PYTHON=/Users/redfrog/.pyenv/versions/2.7.14/bin/python
+#export PKG_CONFIG_PATH="/usr/local/opt/sqlite/lib/pkgconfig"
 
 
 # google-cloud-sdk
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/redfrog/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/redfrog/google-cloud-sdk/path.zsh.inc'; fi
+#if [ -f '/Users/redfrog/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/redfrog/google-cloud-sdk/path.zsh.inc'; fi
 
 # google-cloud-sdk
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/redfrog/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/redfrog/google-cloud-sdk/completion.zsh.inc'; fi
+#if [ -f '/Users/redfrog/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/redfrog/google-cloud-sdk/completion.zsh.inc'; fi

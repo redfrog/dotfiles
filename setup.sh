@@ -1,14 +1,11 @@
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-#sh brew.sh
-
-# set installed zsh & fish
-echo "/usr/local/bin/zsh" >> /etc/shells
-echo "/usr/local/bin/fish" >> /etc/shells
-chsh -s /usr/local/bin/zsh
+sh brew.sh
 
 # set up antigen
 git clone https://github.com/zsh-users/antigen.git ~/.antigen
+
+# set up power-line shell
 git clone https://github.com/banga/powerline-shell.git ~/.powerline-shell
 cd ~/.powerline-shell;./install.sh
 
@@ -20,6 +17,7 @@ git clone https://github.com/nodenv/node-build-update-defs.git ~/.nodenv/plugins
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 git clone https://github.com/tokuhirom/plenv.git ~/.plenv
 git clone https://github.com/tokuhirom/Perl-Build.git ~/.plenv/plugins/perl-build
 
