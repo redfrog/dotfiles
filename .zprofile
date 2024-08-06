@@ -35,3 +35,6 @@ setopt interactive_comments
 # openssl
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 
+# asdf
+. "$HOME/.asdf/asdf.sh"
+export PATH=/usr/local/bin:$PATH
