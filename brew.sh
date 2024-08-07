@@ -27,6 +27,7 @@ brew install --cask chatgpt
 brew install --cask chromium
 brew install --cask cleanmymac
 # brew install --cask clion
+brew install --cask clipy
 # brew install --cask coda
 # brew install codekit
 brew install --cask contexts
