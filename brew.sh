@@ -11,7 +11,7 @@ brew install zsh
 # https://formulae.brew.sh
 
 brew install --cask 1password
-brew install --cask adobe-creative-cloud
+# brew install --cask adobe-creative-cloud
 brew install --cask alfred
 brew install --cask arc
 brew install --cask appcleaner
