@@ -1,48 +1,45 @@
-brew uninstall 1password
-brew uninstall adobe-creative-cloud
+# brew uninstall 1password
+# brew uninstall adobe-creative-cloud
 brew uninstall alfred
 brew uninstall appcleaner
-brew uninstall appcode
-brew uninstall atom
 brew uninstall bartender
 brew uninstall bettertouchtool
-brew uninstall biscuit
-brew uninstall brackets
 brew uninstall busycal
 brew uninstall busycontacts
 brew uninstall cleanmymac
-brew uninstall clion
-brew uninstall coda
-brew uninstall codekit
+brew uninstall clipy
+# brew uninstall coda
+# brew uninstall codekit
 brew uninstall contexts
+brew uninstall cursor
 brew uninstall dash
-brew uninstall datagrip
+brew uninstall deepl
 brew uninstall default-folder-x
-brew uninstall dropbox
+# brew uninstall docker
+# brew uninstall dropbox
+brew uninstall eset-cyber-security
 brew uninstall firefox
-brew uninstall goland
+brew uninstall firefox@developer-edition
 brew uninstall google-chrome
-brew uninstall google-chrome-canary
-brew uninstall google-drive-file-stream
-brew uninstall grammarly
+brew uninstall google-chrome@canary
+# brew uninstall google-drive
+# brew uninstall grammarly
 brew uninstall hyperdock
 brew uninstall imagealpha
 brew uninstall imageoptim
-brew uninstall intellij-idea
 brew uninstall iterm2
+brew uninstall jetbrains-toolbox
 brew uninstall kaleidoscope
-brew uninstall kawa
-brew uninstall moom
-brew uninstall mmhmm
+# brew uninstall kawa
+# brew uninstall moom
+# brew uninstall mmhmm
 brew uninstall notion
-brew uninstall phpstorm
-brew uninstall pycharm
+brew uninstall notion-calendar
+brew uninstall parallels
+brew uninstall rectangle
 brew uninstall resilio-sync
-brew uninstall rider
 brew uninstall rightfont
-brew uninstall rubymine
-brew uninstall slack
-brew uninstall spectacle
+# brew uninstall slack
 brew uninstall spectrum
 brew uninstall staruml
 brew uninstall sublime-text
@@ -52,6 +49,5 @@ brew uninstall tg-pro
 brew uninstall tower
 brew uninstall visual-studio-code
 # brew cask install vmware-fusion
-brew uninstall webstorm
 brew uninstall zeplin
 brew uninstall zoomus
