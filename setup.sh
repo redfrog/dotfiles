@@ -1,14 +1,19 @@
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # install applications
 sh brew.sh
 
 # zinit
-zsh -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
+# https://github.com/zdharma-continuum/zinit?tab=readme-ov-file#manual
+sh -c "$(curl -fsSL get.zshell.dev)" -- -i skip -b main
 
 # set up power-line shell
 git clone https://github.com/banga/powerline-shell.git ~/.powerline-shell
 cd ~/.powerline-shell;./install.sh
+
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # install nodenv, rbenv & ruby-build, pyenv, plenv & perl-build
 # git clone https://github.com/nodenv/nodenv.git ~/.nodenv
@@ -28,7 +33,8 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 
 # symlinks
 ln -sf ~/Workspaces/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/Workspaces/dotfiles/.zshrc.antigen ~/.zshrc.antigen
+# ln -sf ~/Workspaces/dotfiles/.zshrc.antigen ~/.zshrc.antigen
+ln -sf ~/Workspaces/dotfiles/.zshrc.zinit ~/.zshrc.zinit
 ln -sf ~/Workspaces/dotfiles/.zprofile ~/.zprofile
 ln -sf ~/Workspaces/dotfiles/.exports ~/.exports
 ln -sf ~/Workspaces/dotfiles/.aliases ~/.aliases
