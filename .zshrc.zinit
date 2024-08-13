@@ -1,9 +1,14 @@
+# references
+# https://qiita.com/shun198/items/c60ec1cce9c9bf1e8c26#oh-my-zsh
+# https://qiita.com/obake_fe/items/c2edf65de684f026c59c#2-zsh-completions
+# https://qiita.com/yasunori-kirin0418/items/3557150582a1f7e08ecb
+
 # install oh-my-zsh's plugins
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/asdf
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
-# plugins=(asdf command-not-found git iterm2 ssh-agent)
+plugins=(asdf command-not-found git iterm2 ssh-agent)
 
 # install zsh's plugins
 
@@ -14,6 +19,7 @@ zinit load so-fancy/diff-so-fancy
 # auto suggestion
 # https://github.com/zsh-users/zsh-autosuggestions
 zinit ice wait'!0'; zinit light zsh-users/zsh-autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
 
 # Syntax highlighting bundle.
 # https://github.com/zdharma/fast-syntax-highlighting
@@ -22,6 +28,13 @@ zinit ice wait'!0'; zinit light zsh-users/zsh-syntax-highlighting
 # The scripts may be contributed to the Zsh project when stable enough.
 # https://github.com/zsh-users/zsh-completions
 zinit ice wait'!0'; zinit light zsh-users/zsh-completions
+autoload -Uz compinit && compinit
+## 補完で小文字でも大文字にマッチさせる
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+## 補完候補を一覧表示したとき、Tabや矢印で選択できるようにする
+zstyle ':completion:*:default' menu select=1 
+# ファイル補完候補に色を付ける
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # History Search Multi Word
 # https://github.com/zdharma/history-search-multi-word
