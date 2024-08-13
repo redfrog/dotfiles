@@ -1,0 +1,34 @@
+# install oh-my-zsh's plugins
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/asdf
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
+# plugins=(asdf command-not-found git iterm2 ssh-agent)
+
+# install zsh's plugins
+
+# so-fancy/diff-so-fancy
+zinit ice lucid as"program" pick"bin/git-dsf"
+zinit load so-fancy/diff-so-fancy
+
+# auto suggestion
+# https://github.com/zsh-users/zsh-autosuggestions
+zinit ice wait'!0'; zinit light zsh-users/zsh-autosuggestions
+
+# Syntax highlighting bundle.
+# https://github.com/zdharma/fast-syntax-highlighting
+zinit ice wait'!0'; zinit light zsh-users/zsh-syntax-highlighting
+
+# The scripts may be contributed to the Zsh project when stable enough.
+# https://github.com/zsh-users/zsh-completions
+zinit ice wait'!0'; zinit light zsh-users/zsh-completions
+
+# History Search Multi Word
+# https://github.com/zdharma/history-search-multi-word
+zinit ice wait'!0'; zinit light zdharma/history-search-multi-word
+
+
+# load theme
+# Powerlevel10k
+# https://github.com/romkatv/powerlevel10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
