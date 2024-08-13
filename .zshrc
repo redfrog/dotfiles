@@ -1,9 +1,11 @@
-# reference 
+###### reference 
 # https://qiita.com/yasunori-kirin0418/items/3557150582a1f7e08ecb
+# https://qiita.com/shun198/items/c60ec1cce9c9bf1e8c26#oh-my-zsh
 
-# homebrew
+###### homebrew
 export PATH=/opt/homebrew/bin:$PATH
 
+##### powelevel10k
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -11,7 +13,16 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# zinit
+# Oh My Zsh
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time Oh My Zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+##### zinit
 if [[ ! -f $HOME/.zi/bin/zi.zsh ]]; then
   print -P "%F{33}▓▒░ %F{160}Installing (%F{33}z-shell/zi%F{160})…%f"
   command mkdir -p "$HOME/.zi" && command chmod go-rwX "$HOME/.zi"
@@ -31,7 +42,7 @@ zi light-mode for \
 # examples here -> https://wiki.zshell.dev/community/gallery/collection
 zicompinit # <- https://wiki.zshell.dev/docs/guides/commands
 
-# zinit
+##### zinit
 zinit self-update
 source ~/.zshrc.zinit
 
@@ -57,15 +68,6 @@ setopt hist_expire_dups_first   # HISTFILEのサイズがHISTSIZEを超える場
 autoload -Uz compinit; compinit
 
 autoload -Uz colors; colors
-
-# Tabで選択できるように
-zstyle ':completion:*:default' menu select=2
-
-# 補完で大文字にもマッチ
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# ファイル補完候補に色を付ける
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
 setopt auto_param_slash
