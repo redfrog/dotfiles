@@ -4,9 +4,6 @@
 [core]
   deltaBaseCacheLimit = 1G
   editor = vim
-[mergetool]
-	keepBackup = false
-	prompt = false
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
@@ -51,9 +48,9 @@
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [merge]
   tool = Kaleidoscope
-  keepBackup = false
 [mergetool]
   prompt = false
+  keepBackup = false
 [mergetool "Kaleidoscope"]
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
   trustExitCode = true
