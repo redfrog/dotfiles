@@ -35,6 +35,7 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 ln -sf ~/Workspaces/dotfiles/.zshrc ~/.zshrc
 # ln -sf ~/Workspaces/dotfiles/.zshrc.antigen ~/.zshrc.antigen
 ln -sf ~/Workspaces/dotfiles/.zshrc.zinit ~/.zshrc.zinit
+ln -sf ~/Workspaces/dotfiles/.zshrc.oh-my-zsh ~/.zshrc.oh-my-zsh
 ln -sf ~/Workspaces/dotfiles/.zprofile ~/.zprofile
 ln -sf ~/Workspaces/dotfiles/.exports ~/.exports
 ln -sf ~/Workspaces/dotfiles/.aliases ~/.aliases
