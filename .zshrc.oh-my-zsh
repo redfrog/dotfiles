@@ -1,0 +1,10 @@
+# references
+# https://qiita.com/shun198/items/c60ec1cce9c9bf1e8c26#oh-my-zsh
+# https://qiita.com/obake_fe/items/c2edf65de684f026c59c#2-zsh-completions
+
+# install oh-my-zsh's plugins
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/asdf
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
+plugins=(asdf command-not-found git iterm2 ssh-agent)
