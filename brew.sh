@@ -15,7 +15,7 @@ brew install diff-so-fancy
 
 # brew install --cask 1password
 # brew install --cask adobe-creative-cloud
-brew install --cask alfred
+# brew install --cask alfred
 brew install --cask appcleaner
 brew install --cask arc
 brew install --cask bartender
@@ -26,7 +26,7 @@ brew install --cask carbon-copy-cloner
 brew install --cask chatgpt
 brew install --cask chromium
 brew install --cask cleanmymac
-brew install --cask clipy
+# brew install --cask clipy
 # brew install --cask coda
 # brew install codekit
 brew install --cask contexts
@@ -55,7 +55,9 @@ brew install --cask kaleidoscope
 brew install --cask notion
 brew install --cask notion-calendar
 brew install --cask parallels
-brew install --cask rectangle
+# raycast : alfred + clipy + rectangle
+brew install --cask raycast
+# brew install --cask rectangle
 brew install --cask resilio-sync
 brew install --cask rightfont
 # brew install --cask slack
