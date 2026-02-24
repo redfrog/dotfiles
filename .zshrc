@@ -123,3 +123,6 @@ alias ll='ls -lG'
 # clearコマンドのalias関連
 alias c='clear'
 alias cc='c &&'
+
+# Added by Antigravity
+export PATH="/Users/redfrog/.antigravity/antigravity/bin:$PATH"
