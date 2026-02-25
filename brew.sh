@@ -16,6 +16,9 @@ brew install diff-so-fancy
 # brew install --cask 1password
 # brew install --cask adobe-creative-cloud
 # brew install --cask alfred
+## editor
+brew install --cask antigravity
+
 brew install --cask appcleaner
 brew install --cask arc
 brew install --cask bartender
@@ -24,14 +27,19 @@ brew install --cask bettertouchtool
 # brew install --cask busycontacts
 brew install --cask carbon-copy-cloner
 brew install --cask chatgpt
+brew install --cask chatgpt-atlas
 brew install --cask chromium
-brew install --cask cleanmymac
+brew install --cask claude-code
+# brew install --cask cleanmymac
 # brew install --cask clipy
 # brew install --cask coda
 # brew install codekit
 brew install --cask commander-one
 brew install --cask contexts
+
+## editor
 brew install --cask cursor
+
 brew install --cask dash
 brew install --cask deepl
 brew install --cask default-folder-x
@@ -43,21 +51,22 @@ brew install --cask firefox@developer-edition
 brew install --cask google-chrome
 brew install --cask google-chrome@canary
 # brew install --cask google-drive
-# brew install --cask grammarly
+# brew install --cask grammarly-desktop
 # brew install --cask hyperdock
 brew install --cask imagealpha
 brew install --cask imageoptim
 brew install --cask iterm2
 brew install --cask jetbrains-toolbox
-brew install --cask kaleidoscope
+# brew install --cask kaleidoscope
 # brew install --cask kawa
 # brew install --cask moom
 # brew install --cask mmhmm
 brew install --cask notion
 brew install --cask notion-calendar
 brew install --cask notion-mail
+brew install --cask mimestream
 brew install --cask obsidian
-brew install --cask parallels
+# brew install --cask parallels
 # raycast : alfred + clipy + rectangle
 brew install --cask raycast
 # brew install --cask rectangle
@@ -71,9 +80,15 @@ brew install --cask tableplus
 brew install --cask telegram
 brew install --cask tg-pro
 brew install --cask tower
+
+## editor
 brew install --cask visual-studio-code
+
 # brew cask install --cask vmware-fusion
+
+## editor
 brew install --cask windsurf
+
 brew install --cask zeplin
 brew install --cask zoom
 
