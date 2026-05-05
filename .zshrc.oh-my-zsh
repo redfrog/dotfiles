@@ -7,4 +7,4 @@
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
-plugins=(asdf command-not-found git iterm2 ssh-agent)
+plugins=(command-not-found git iterm2 ssh-agent)
