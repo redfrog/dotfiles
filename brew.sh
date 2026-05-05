@@ -86,6 +86,9 @@ brew install --cask visual-studio-code
 
 # brew cask install --cask vmware-fusion
 
+# terminal: warp
+brew install --cask warp
+
 ## editor
 brew install --cask windsurf
 
