@@ -1,26 +1,26 @@
 # =============================================================================
 # .zprofile — Loaded ONCE at login, BEFORE .zshrc
 # Put PATH setup and one-time tool initialization here.
-# Do NOT put aliases / prompt / completion settings here (use .zshrc).
 # =============================================================================
 
 # -----------------------------------------------------------------------------
-# Load shared environment variables
-# (Aliases & functions are loaded from .zshrc, since they require an
-#  interactive shell to be useful.)
+# Homebrew (Apple Silicon: /opt/homebrew, Intel: /usr/local)
+# Sets PATH, MANPATH, INFOPATH, HOMEBREW_* env vars in one shot.
+# -----------------------------------------------------------------------------
+if [ -x /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -x /usr/local/bin/brew ]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
+
+# -----------------------------------------------------------------------------
+# Load shared environment variables (paths, ZSH var, etc.)
 # -----------------------------------------------------------------------------
 [ -r "$HOME/.exports" ] && source "$HOME/.exports"
 
 # -----------------------------------------------------------------------------
-# PATH — system & language toolchains
-# Order matters: later entries take precedence (they are prepended).
+# Toolchains — Rust / Bun / proto
 # -----------------------------------------------------------------------------
-
-# Homebrew / system local
-export PATH="/usr/local/bin:$PATH"
-
-# OpenSSL (Homebrew)
-export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 # Rust (cargo)
 [ -r "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
@@ -32,27 +32,17 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# proto (toolchain manager)
+# proto (manages node, npm, etc. — see ~/.proto/.prototools)
 export PROTO_HOME="$HOME/.proto"
 export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH"
 
-# Antigravity
-export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
-
-# npm global bin (only resolve once at login to avoid slow shell startup)
-if command -v npm >/dev/null 2>&1; then
-  export PATH="$(npm config get prefix)/bin:$PATH"
-fi
-
 # -----------------------------------------------------------------------------
-# Version managers
+# asdf (manages bats, shellcheck, shfmt — see ~/.asdf/.tool-versions)
 # -----------------------------------------------------------------------------
-
-# asdf
 [ -r "$HOME/.asdf/asdf.sh" ] && . "$HOME/.asdf/asdf.sh"
 
 # -----------------------------------------------------------------------------
-# Secrets — load from a file that is NOT committed to git
-# (Create ~/.secrets with chmod 600 and put sensitive env vars there.)
+# Secrets — sensitive env vars (NOT committed to git)
+# Create ~/.secrets with chmod 600 and put API keys / passphrases there.
 # -----------------------------------------------------------------------------
 [ -r "$HOME/.secrets" ] && source "$HOME/.secrets"
