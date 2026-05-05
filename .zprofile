@@ -38,3 +38,16 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 # asdf
 . "$HOME/.asdf/asdf.sh"
 export PATH=/usr/local/bin:$PATH
+
+# proto
+export PROTO_HOME="$HOME/.proto";
+export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH";
+echo 'export PATH="$(npm config get prefix)/bin:$PATH"' >> ~/.zshrc
+
+# proto shell activation
+if command -v proto >/dev/null 2>&1; then
+  eval "$(proto activate bash)"
+fi
+
+# anthropic: claude code client key passphrase 
+export CLAUDE_CODE_CLIENT_KEY_PASSPHRASE="ECgvEiM_smv4vfvH"
