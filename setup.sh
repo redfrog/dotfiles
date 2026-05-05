@@ -37,6 +37,7 @@ ln -sf ~/Workspaces/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/Workspaces/dotfiles/.zshrc.zinit ~/.zshrc.zinit
 ln -sf ~/Workspaces/dotfiles/.zshrc.oh-my-zsh ~/.zshrc.oh-my-zsh
 ln -sf ~/Workspaces/dotfiles/.zprofile ~/.zprofile
+ln -sf ~/Workspaces/dotfiles/.zshenv ~/.zshenv
 ln -sf ~/Workspaces/dotfiles/.exports ~/.exports
 ln -sf ~/Workspaces/dotfiles/.aliases ~/.aliases
 ln -sf ~/Workspaces/dotfiles/.functions ~/.functions
