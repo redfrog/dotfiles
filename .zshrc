@@ -8,45 +8,46 @@
 
 # -----------------------------------------------------------------------------
 # Powerlevel10k instant prompt
-# Must stay near the top of .zshrc. Anything that prints to stdout/stderr
-# (echo, print, slow tool init that warns, etc.) MUST come BEFORE this block.
+# Must stay near the top. Anything that prints to stdout/stderr (echo, slow
+# tool warnings, etc.) MUST come BEFORE this block.
 # -----------------------------------------------------------------------------
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-# Pick ONE: "quiet" suppresses the warning, "off" disables instant prompt.
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # -----------------------------------------------------------------------------
 # Plugin manager: zinit
+# Auto-install zinit on first run.
 # -----------------------------------------------------------------------------
 if [[ ! -f $HOME/.zi/bin/zi.zsh ]]; then
   print -P "%F{33}▓▒░ %F{160}Installing (%F{33}z-shell/zi%F{160})…%f"
   command mkdir -p "$HOME/.zi" && command chmod go-rwX "$HOME/.zi"
-  command git clone -q --depth=1 --branch "main" https://github.com/z-shell/zi "$HOME/.zi/bin" && \
-    print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-    print -P "%F{160}▓▒░ The clone has failed.%f%b"
+  command git clone -q --depth=1 --branch "main" \
+      https://github.com/z-shell/zi "$HOME/.zi/bin" \
+    && print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" \
+    || print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
 source "$HOME/.zi/bin/zi.zsh"
 autoload -Uz _zi
 (( ${+_comps} )) && _comps[zi]=_zi
 
-# zinit annexes (meta-plugins). zicompinit is called after all zinit plugins
-# are loaded, so call it only ONCE here.
+# zinit annexes (meta-plugins). Init completion only ONCE here.
 zi light-mode for \
   z-shell/z-a-meta-plugins \
   @annexes
 zicompinit
 
-# Project-local zinit plugin list
-source "$HOME/.zshrc.zinit"
+# Project-local zinit plugin list (so-fancy, autosuggestions, p10k, ...)
+[ -r "$HOME/.zshrc.zinit" ] && source "$HOME/.zshrc.zinit"
 
 # -----------------------------------------------------------------------------
 # Oh My Zsh
-# Theme must be set BEFORE sourcing the OMZ config file.
+# ZSH variable is set in .exports; theme must be set BEFORE sourcing OMZ.
 # -----------------------------------------------------------------------------
 ZSH_THEME="powerlevel10k/powerlevel10k"
-source "$HOME/.zshrc.oh-my-zsh"
+[ -r "$HOME/.zshrc.oh-my-zsh" ] && source "$HOME/.zshrc.oh-my-zsh"
+[ -r "$ZSH/oh-my-zsh.sh" ]      && source "$ZSH/oh-my-zsh.sh"
 
 # Powerlevel10k user config (run `p10k configure` to (re)generate)
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -67,8 +68,6 @@ setopt hist_expire_dups_first # When trimming, drop dups first
 
 # -----------------------------------------------------------------------------
 # Completion & colors
-# (compinit is also triggered by zicompinit above; calling once more here
-#  is safe and ensures completion works even if zinit init is skipped.)
 # -----------------------------------------------------------------------------
 autoload -Uz compinit && compinit
 autoload -Uz colors   && colors
@@ -93,9 +92,8 @@ setopt auto_cd               # `dir` alone cd's into dir
 setopt no_beep               # Disable audible bell
 
 # -----------------------------------------------------------------------------
-# Key bindings
+# Key bindings: Ctrl-P / Ctrl-N for prefix-based history search
 # -----------------------------------------------------------------------------
-# Ctrl-P / Ctrl-N: history search filtered by what's already typed
 autoload -Uz history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end  history-search-end
@@ -109,12 +107,12 @@ for file in ~/.{aliases,functions}; do
   [ -r "$file" ] && source "$file"
 done
 
-# Quick aliases (keep here or move to ~/.aliases)
+# Quick aliases (in addition to ~/.aliases)
 alias ls='ls --color=auto -G'
 alias la='ls -lAG'
 alias ll='ls -lG'
-alias c='clear'
-alias cc='c &&'
+alias cls='clear'
+alias cc='clear &&'
 
 # -----------------------------------------------------------------------------
 # Tool integrations (interactive)
@@ -123,7 +121,7 @@ alias cc='c &&'
 # bun completions
 [ -s "$HOME/.oh-my-zsh/completions/_bun" ] && source "$HOME/.oh-my-zsh/completions/_bun"
 
-# proto — activate for zsh (NOT bash)
+# proto shell activation (zsh, NOT bash)
 if command -v proto >/dev/null 2>&1; then
   eval "$(proto activate zsh)"
 fi
