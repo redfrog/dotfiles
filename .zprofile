@@ -1,53 +1,58 @@
-for file in ~/.{exports,aliases,functions}; do
-  [ -r "$file" ] && source "$file"
-done
+# =============================================================================
+# .zprofile — Loaded ONCE at login, BEFORE .zshrc
+# Put PATH setup and one-time tool initialization here.
+# Do NOT put aliases / prompt / completion settings here (use .zshrc).
+# =============================================================================
 
-function powerline_precmd() {
-    PS1="$(powerline-shell --shell zsh $?)"
-}
+# -----------------------------------------------------------------------------
+# Load shared environment variables
+# (Aliases & functions are loaded from .zshrc, since they require an
+#  interactive shell to be useful.)
+# -----------------------------------------------------------------------------
+[ -r "$HOME/.exports" ] && source "$HOME/.exports"
 
-function install_powerline_precmd() {
-  for s in "${precmd_functions[@]}"; do
-    if [ "$s" = "powerline_precmd" ]; then
-      return
-    fi
-  done
-  precmd_functions+=(powerline_precmd)
-}
+# -----------------------------------------------------------------------------
+# PATH — system & language toolchains
+# Order matters: later entries take precedence (they are prepended).
+# -----------------------------------------------------------------------------
 
-if [ "$TERM" != "linux" -a -x "$(command -v powerline-shell)" ]; then
-    install_powerline_precmd
-fi
+# Homebrew / system local
+export PATH="/usr/local/bin:$PATH"
 
-if [ -n "$LS_COLORS" ]; then
-  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-fi
-
-# lang
-export LANG=ja_JP.UTF-8
-
-# show japanese files
-setopt print_eight_bit
-
-# set comment as #
-setopt interactive_comments
-
-# openssl
+# OpenSSL (Homebrew)
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 
-# asdf
-. "$HOME/.asdf/asdf.sh"
-export PATH=/usr/local/bin:$PATH
+# Rust (cargo)
+[ -r "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
-# proto
-export PROTO_HOME="$HOME/.proto";
-export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH";
-echo 'export PATH="$(npm config get prefix)/bin:$PATH"' >> ~/.zshrc
+# Rokit (Roblox toolchain manager)
+[ -r "$HOME/.rokit/env" ] && . "$HOME/.rokit/env"
 
-# proto shell activation
-if command -v proto >/dev/null 2>&1; then
-  eval "$(proto activate bash)"
+# Bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# proto (toolchain manager)
+export PROTO_HOME="$HOME/.proto"
+export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH"
+
+# Antigravity
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+
+# npm global bin (only resolve once at login to avoid slow shell startup)
+if command -v npm >/dev/null 2>&1; then
+  export PATH="$(npm config get prefix)/bin:$PATH"
 fi
 
-# anthropic: claude code client key passphrase 
-export CLAUDE_CODE_CLIENT_KEY_PASSPHRASE="ECgvEiM_smv4vfvH"
+# -----------------------------------------------------------------------------
+# Version managers
+# -----------------------------------------------------------------------------
+
+# asdf
+[ -r "$HOME/.asdf/asdf.sh" ] && . "$HOME/.asdf/asdf.sh"
+
+# -----------------------------------------------------------------------------
+# Secrets — load from a file that is NOT committed to git
+# (Create ~/.secrets with chmod 600 and put sensitive env vars there.)
+# -----------------------------------------------------------------------------
+[ -r "$HOME/.secrets" ] && source "$HOME/.secrets"
