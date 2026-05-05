@@ -45,7 +45,7 @@ zicompinit
 # Oh My Zsh
 # ZSH variable is set in .exports; theme must be set BEFORE sourcing OMZ.
 # -----------------------------------------------------------------------------
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME=""
 [ -r "$HOME/.zshrc.oh-my-zsh" ] && source "$HOME/.zshrc.oh-my-zsh"
 [ -r "$ZSH/oh-my-zsh.sh" ]      && source "$ZSH/oh-my-zsh.sh"
 
